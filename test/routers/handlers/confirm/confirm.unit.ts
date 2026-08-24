@@ -137,7 +137,7 @@ describe("CompanyConfirmHandler", () => {
         it("should set nextURL to stop page for BR numbers when feature flag is on", async () => {
             const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: true });
             companyProfileServiceMock.getCompanyProfile.mockResolvedValue({} as CompanyProfile);
-            Object.assign(mockSession, getSessionRequest());
+            Object.assign(mockSession, getLoggedInSession());
             mockSession.data.signin_info!.user_profile!.email = testEmail;
 
             const results: ViewModel<CompanyFilingIdData> = await handler.execute({
@@ -153,7 +153,7 @@ describe("CompanyConfirmHandler", () => {
         it("should keep nextURL as choose package for BR numbers when feature flag is off", async () => {
             const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: false });
             companyProfileServiceMock.getCompanyProfile.mockResolvedValue({} as CompanyProfile);
-            Object.assign(mockSession, getSessionRequest());
+            Object.assign(mockSession, getLoggedInSession());
             mockSession.data.signin_info!.user_profile!.email = testEmail;
 
             const results: ViewModel<CompanyFilingIdData> = await handler.execute({
