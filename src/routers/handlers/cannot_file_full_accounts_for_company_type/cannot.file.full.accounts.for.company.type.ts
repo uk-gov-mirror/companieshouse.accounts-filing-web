@@ -33,7 +33,7 @@ export class CannotFileFullAccountsForCompanyTypeHandler extends GenericHandler 
             viewData: {
                 ...this.baseViewData,
                 title: getLocalesField("cannot_file_full_accounts_for_company_type_title", req),
-                guidanceUrl: "https://www.gov.uk/guidance/file-accounts-in-the-uk-as-an-overseas-company",
+                guidanceUrl: "https://www.gov.uk/file-accounts-in-the-uk-as-an-overseas-company",
                 chooseDifferentCompanyUrl: companySearchUrl
             }
         };
