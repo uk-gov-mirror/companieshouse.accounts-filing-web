@@ -8,7 +8,7 @@ export const csrfErrorHandler = (err: CsrfError | Error, _: Request,
                                  res: Response, next: NextFunction) => {
 
     // handle non-CSRF Errors immediately
-    if (!(err instanceof CsrfError)) { // FIXME: CsrfError can be undefined at runtime crashing
+    if (!(err instanceof CsrfError)) { // CsrfError can be undefined at runtime crashing
         next(err);
         return;
     }
