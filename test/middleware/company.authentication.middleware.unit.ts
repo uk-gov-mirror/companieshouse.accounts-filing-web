@@ -20,7 +20,7 @@ describe("companyAuthenticationMiddleware", () => {
     });
 
     it("should redirect BR company numbers to stop page when feature flag is on", () => {
-        const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: true });
+        const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826: true });
         const session = getLoggedInSession();
         session.setExtraData(ContextKeys.COMPANY_NUMBER, "BR000804");
 
@@ -37,7 +37,7 @@ describe("companyAuthenticationMiddleware", () => {
     });
 
     it("should call auth middleware for BR company numbers when feature flag is off", () => {
-        const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: false });
+        const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826: false });
         const session = getLoggedInSession();
         session.setExtraData(ContextKeys.COMPANY_NUMBER, "BR000804");
 

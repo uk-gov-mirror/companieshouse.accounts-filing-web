@@ -65,7 +65,7 @@ export class CompanyConfirmHandler extends GenericHandler {
     }
 
     private getNextUrl(companyNumber: string, language: string): string {
-        if (env.FEATURE_FLAG_BR_COMPANY_STOP_SCREEN && isBranchRegistrationNumber(companyNumber)) {
+        if (env.FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826 && isBranchRegistrationNumber(companyNumber)) {
             return addLangToUrl(PrefixedUrls.CANNOT_FILE_FULL_ACCOUNTS_FOR_COMPANY_TYPE, language);
         }
 

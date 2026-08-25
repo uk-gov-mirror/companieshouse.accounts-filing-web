@@ -12,7 +12,7 @@ export const companyAuthenticationMiddleware = (req: Request, res: Response, nex
 
     checkCompanyNumberFormatIsValidate(companyNumber);
 
-    if (env.FEATURE_FLAG_BR_COMPANY_STOP_SCREEN && isBranchRegistrationNumber(companyNumber)) {
+    if (env.FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826 && isBranchRegistrationNumber(companyNumber)) {
         return res.redirect(addLangToUrl(PrefixedUrls.CANNOT_FILE_FULL_ACCOUNTS_FOR_COMPANY_TYPE, getLanguageFromRequest(req)));
     }
 

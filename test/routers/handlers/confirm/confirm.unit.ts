@@ -135,7 +135,7 @@ describe("CompanyConfirmHandler", () => {
         });
 
         it("should set nextURL to stop page for BR numbers when feature flag is on", async () => {
-            const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: true });
+            const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826: true });
             companyProfileServiceMock.getCompanyProfile.mockResolvedValue({} as CompanyProfile);
             Object.assign(mockSession, getLoggedInSession());
             mockSession.data.signin_info!.user_profile!.email = testEmail;
@@ -151,7 +151,7 @@ describe("CompanyConfirmHandler", () => {
         });
 
         it("should keep nextURL as choose package for BR numbers when feature flag is off", async () => {
-            const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN: false });
+            const cleanup = setEnvVars({ FEATURE_FLAG_BR_COMPANY_STOP_SCREEN_250826: false });
             companyProfileServiceMock.getCompanyProfile.mockResolvedValue({} as CompanyProfile);
             Object.assign(mockSession, getLoggedInSession());
             mockSession.data.signin_info!.user_profile!.email = testEmail;
